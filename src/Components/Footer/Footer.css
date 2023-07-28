@@ -1,0 +1,48 @@
+.footer-logo img {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    
+}
+
+.footer-logo {
+    justify-content: center;
+    
+}
+
+.footer_link {
+    color: black;
+    margin-bottom: 16px;
+    font-weight: 700    ;
+}
+
+.footer_list a {
+    font-size: 20px;
+    color: black;
+    font-weight: 400;
+    padding: 8px 16px 8px 0;
+}
+
+
+.footer_list a:hover {
+    color: #faa935;
+}
+
+.footer_list a:last-child:hover {
+    color: black;
+}
+
+.footer_list h6 span .icon {
+    color: #faa935;
+    font-size: 1.4rem;
+}
+
+.footer_list p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.footer_list .footer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

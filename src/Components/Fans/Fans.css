@@ -1,0 +1,31 @@
+.fans-title {
+    font-size: 27px;
+    font-family: 'Island Moments';
+    background-color: #faa935;
+    border-radius: 50px;
+    padding: 0 16px 0 8px;
+    margin: 0 0 8px;
+    width: 170px;
+}
+
+.fans_sub {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}   
+.fans-slick {
+    width: 100%;
+    display: inline-block;
+    
+}
+
+.fans-slick h3 {
+    font-size: 16px;
+    color: #212529;
+    font-weight: 400;
+    margin: 0 0 16px;
+}
+

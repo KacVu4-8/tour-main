@@ -1,0 +1,26 @@
+.letter_content h2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 8px;
+}
+
+.letter_btn {
+    border: 50px;
+    margin-left: 10px;
+}
+
+.letter_input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.letter_content p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
