@@ -36,3 +36,86 @@
     transform: rotate(360deg);
   }
 }
+
+/* Base CSS */
+/* Reset CSS để đảm bảo đồng nhất trên các trình duyệt */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Đảm bảo phần tử block mở rộng theo chiều ngang */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Định nghĩa kiểu chữ và nền mặc định */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f7f7f7;
+}
+
+/* Xóa định dạng mặc định cho danh sách */
+ul, ol {
+  list-style: none;
+}
+
+/* Định dạng liên kết */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Định dạng các phần tử tiêu đề */
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+/* Định dạng phần tử đoạn văn bản */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Căn giữa phần tử trong trang */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Hiển thị hình ảnh dưới dạng khung */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Định dạng tiêu đề trang */
+header {
+  background-color: #fff;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Định dạng footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
