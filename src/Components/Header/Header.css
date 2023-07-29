@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    position: sticky;
 }
 
 .header-logo {
@@ -22,14 +23,18 @@
 
 .menu-list a {
     font-size: 24px;
-    color: black;
-    font-weight: 700;
+    color: #0b2727;
+    font-weight: 600;
+    margin:  0 20px;
 }
 
 .menu-list a:hover {
     color: black;
 }
 
+.menu-list a:active {
+    color: #faa935;
+}
 .header-login {
     display: flex;
     align-items: center;

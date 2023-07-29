@@ -16,6 +16,7 @@
 }
 
 .footer_list a {
+    text-decoration: none;
     font-size: 20px;
     color: black;
     font-weight: 400;
@@ -27,9 +28,9 @@
     color: #faa935;
 }
 
-.footer_list a:last-child:hover {
+/* .footer_list a:last-child:hover {
     color: black;
-}
+} */
 
 .footer_list h6 span .icon {
     color: #faa935;
