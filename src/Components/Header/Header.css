@@ -8,7 +8,6 @@
 
 .header-logo {
     display: flex;
-    
 }
 
 .header-logo img {
@@ -25,7 +24,7 @@
     font-size: 24px;
     color: #0b2727;
     font-weight: 600;
-    margin:  0 20px;
+    margin: 0 20px;
 }
 
 .menu-list a:hover {
@@ -39,7 +38,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
 }
 
 .header-login a {
@@ -55,4 +53,45 @@
 .header-login a:last-child {
     border-radius: 50px;
     padding: 7px 24px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+    .menu-mobile {
+        display: block;
+    }
+    .menu-list {
+        display: none;
+    }
+}
+/* Ipad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header-menu {
+        display: none; /* Ẩn phần menu mặc định trên màn hình nhỏ */
+    }
+    .menu-mobile {
+        display: block; /* Hiển thị nút menu trên màn hình nhỏ */
+    }
+
+    /* Thêm CSS để giới hạn chiều rộng của Drawer khi nó được mở */
+    .ant-drawer {
+        max-width: 80%; /* Điều chỉnh chiều rộng tối đa của Drawer */
+    }
+}
+
+/* LapTop */
+@media only screen and (min-width: 1024px) {
+    .header-menu {
+        display: block; /* Hiển thị phần menu mặc định trên màn hình lớn */
+    }
+    .menu-mobile {
+        display: none; /* Ẩn nút menu trên màn hình lớn */
+    }
+}
+
+.offcanvas-body a {
+    font-size: 24px;
+    color: #0b2727;
+    display: block;
+    padding: 24px 0;
 }

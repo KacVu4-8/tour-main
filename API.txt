@@ -1,0 +1,9 @@
+http://localhost:4000/api/v1/tours
+
+http://localhost:4000/api/v1/users
+
+http://localhost:4000/api/v1/review
+
+http://localhost:4000/api/v1/auth
+
+http://localhost:4000/api/v1/booking
