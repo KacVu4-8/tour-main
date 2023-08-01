@@ -4,6 +4,8 @@ import { faLocationDot, faMapLocation, faUsers, faMagnifyingGlass } from '@forta
 import AppHeader from '../Header';
 import Footer from '../Footer';
 import Letter from '../Letter';
+import Explore from '../Explore';
+import Booking from '../Booking';
 import './Tours.css'
 
 function Tours() {
@@ -61,6 +63,8 @@ function Tours() {
                     </div>
                 </div>
             </div>
+            <Explore/>
+            <Booking/>
             <Letter />
             <Footer/>
         </div>

@@ -5,10 +5,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import DATA from '../data/data';
 
-// import fans_1 from '../images/fans-1.jpg';
-// import fans_2 from '../images/fans-2.jpg';
-// import fans_3 from '../images/ava-3.jpg';
-// import fans_4 from '../images/ava-4.jpg';
 
 function Fans() {
     const settings = {

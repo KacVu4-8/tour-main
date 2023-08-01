@@ -1,0 +1,94 @@
+.explore_title {
+    background: #faa935;
+    border-radius: 50px;
+    color: #0b2727;
+    font-family: Island Moments, cursive;
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding: 0 1rem 0 0.5rem;
+    width: max-content;
+}
+.explore_sub {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.tour_card {
+    border: none;
+    box-shadow: 0 18px 50px -10px rgba(0, 0, 0, 0.2);
+}
+
+.tour_img {
+    position: relative;
+}
+
+.tour_img img {
+    border-radius:  5px 5px 0 0 ;
+    width: 100%;
+}
+
+.tour_img span {
+    background:#faa935 ;
+    border-radius: 3px 0 0 0;
+    bottom: 0;
+    color: #fff;
+    height: max-content;
+    padding: 0.1rem 0.3rem;
+    position: absolute;
+    right: 0;
+    width: max-content;
+    z-index: 10;
+}
+
+.tour_location {
+    color: #0b2727;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.card_top span .icon {
+    color:#faa935 ;
+}
+
+.tour_rating {
+    color: #6e7074;
+    font-size: 0.8rem;
+}
+
+.tour_title {
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.tour_title a {
+    font-size: 1rem;
+    color: #0b2727;
+    text-decoration: none;
+}
+
+.card_bottom h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #faa935;
+}
+
+.card_bottom h5 span {
+    color: #6e7074;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.booking_btn {
+    background-color: #faa935;
+    border: none;
+    border-radius: 14px 0 14px 0;
+    font-style: italic;
+    padding: 0.6rem;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.card_bottom a:hover {
+    color: #0b2727;
+}
