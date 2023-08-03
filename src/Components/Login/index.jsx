@@ -1,15 +1,42 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 import AppHeader from '../Header';
 import Footer from '../Footer';
-import { Link } from 'react-router-dom';
-import { Button, Form, Input } from 'antd';
-import FormItem from 'antd/es/form/FormItem';
-
 import logo from '../images/login-1.png';
 import user_1 from '../images/user-1.png';
-
-import './Login.css'
+import './Login.css';
 
 function AppLogin() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate(); 
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:4000/api/v1/auth/login', {
+                email,
+                password,
+            });
+
+            const { token, data } = response.data;
+
+            // Lưu token vào localStorage hoặc Redux store
+            localStorage.setItem('token', token);
+            localStorage.setItem('username', data.username);
+
+            // Đăng nhập thành công, bạn có thể thực hiện các tác vụ sau khi đăng nhập ở đây
+
+            alert('Đăng nhập thành công. Chào mừng ' + data.username + '!');
+            navigate('/')
+        } catch (error) {
+            alert('Đăng nhập thất bại: ' + error.message);
+        }
+    };
+
     return (
         <div>
             <AppHeader />
@@ -26,45 +53,37 @@ function AppLogin() {
                                     style={{ background: '#faa935', position: 'relative' }}
                                 >
                                     <div className="user">
-                                        <img src={user_1} alt=""     />
+                                        <img src={user_1} alt="" />
                                     </div>
                                     <h2>Login</h2>
-                                    <Form>
-                                        <FormItem
-                                            className="input_email"
+                                    <form onSubmit={handleSubmit}>
+                                        <input
+                                            className="input_email mt-4 mb-4"
+                                            type="email"
+                                            id="email"
+                                            placeholder="Email"
                                             name="email"
-                                            rules={[
-                                                {
-                                                    required: true,
-                                                    message: 'Hãy nhập email của bạn',
-                                                },
-                                                { type: 'email', message: 'Hãy nhập đúng email của bạn' },
-                                            ]}
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
                                             hasFeedback
-                                        >
-                                            <Input placeholder="Email" />
-                                        </FormItem>
-                                        <Form.Item
-                                            className="input_email"
+                                        />
+                                        <br />
+                                        <input
+                                            className="input_email mb-4"
+                                            type="password"
+                                            id="password"
+                                            placeholder="Password"
                                             name="password"
-                                            rules={[
-                                                {
-                                                    required: true,
-                                                    message: 'Hãy nhập mật khẩu của bạn',
-                                                },
-                                                { min: 6, message: 'Mật khẩu ít nhất 6 kí tự' },
-                                            ]}
-                                            hasFeedback
-                                        >
-                                            <Input.Password placeholder="Password" />
-                                        </Form.Item>
-                                        <Form.Item wrapperCol={{ span: 24 }}>
-                                            <Button block className="btn btn_login " htmlType="submit">
-                                                Login
-                                            </Button>
-                                        </Form.Item>
-                                    </Form>
-
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            required
+                                        />
+                                        <br />
+                                        <button className="btn btn_login w-100" type="submit">
+                                            Login
+                                        </button>
+                                    </form>
                                     <p>
                                         Don't have an account?
                                         <Link to="/register">Create</Link>

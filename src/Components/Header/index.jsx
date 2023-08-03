@@ -1,72 +1,3 @@
-// import { Link } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faBars } from '@fortawesome/free-solid-svg-icons';
-// import { Button, Drawer } from 'antd';
-// import { useRef, useState } from 'react';
-
-// import logo from './logo-header.png';
-// import Navbar from '../../router';
-// import './Header.css';
-
-// const AppHeader = () => {
-//     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-//     const handleDrawerOpen = () => {
-//         setIsDrawerOpen(true);
-//     };
-
-//     const handleDrawerClose = () => {
-//         setIsDrawerOpen(false);
-//     };
-//     return (
-//         <>
-//             <div className="container ">
-//                 <div className="row">
-//                     <div className="header">
-//                         <div className="header-logo col-lg-5">
-//                             <img src={logo} alt="" srcset="" />
-//                         </div>
-//                         <div className="header-menu col-lg-3">
-//                             <div className="menu-list">
-//                                 <Navbar />
-//                             </div>
-//                         </div>
-//                         <div className="header-login col-lg-3">
-//                             <Link to="/login" className="btn " type="button">
-//                                 {' '}
-//                                 Login
-//                             </Link>
-//                             <Link to="/register" className="btn btn-warning text-white" type="button">
-//                                 Register
-//                             </Link>
-
-//                             <Button className="menu-mobile" data-bs-toggle="offcanvas" data-bs-target="#demo">
-//                                 <FontAwesomeIcon icon={faBars} />
-//                             </Button>
-
-//                             <Drawer
-//                                 title="Heading"
-//                                 placement="right"
-//                                 onClose={handleDrawerClose} // Sử dụng onClose để đóng Drawer khi bấm nút đóng
-//                                 onClick={isDrawerOpen} // Trạng thái hiển thị của Drawer
-//                             >
-//                                 <div className="offcanvas-body">
-//                                     <p>Some text lorem ipsum.</p>
-//                                     <p>Some text lorem ipsum.</p>
-//                                     <p>Some text lorem ipsum.</p>
-
-//                                 </div>
-//                             </Drawer>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </>
-//     );
-// };
-
-// export default AppHeader;
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -78,6 +9,14 @@ import './Header.css';
 
 const AppHeader = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const handleLogout = () => {
+        // Xóa thông tin người dùng khỏi localStorage khi đăng xuất
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+
+        // Chuyển hướng về trang đăng nhập sau khi đăng xuất
+        window.location.href = '/'; // Hoặc navigate đến '/login' nếu đang sử dụng react-router-dom
+    };
 
     const handleDrawerOpen = () => {
         setIsDrawerOpen(true);
@@ -86,6 +25,9 @@ const AppHeader = () => {
     const handleDrawerClose = () => {
         setIsDrawerOpen(false);
     };
+
+    // Lấy thông tin người dùng từ localStorage
+    const username = localStorage.getItem('username');
 
     return (
         <>
@@ -101,18 +43,28 @@ const AppHeader = () => {
                             </div>
                         </div>
                         <div className="header-login col-lg-3">
-                            <Link to="/login" className="btn " type="button">
-                                {' '}
-                                Login
-                            </Link>
-                            <Link to="/register" className="btn btn-warning text-white" type="button">
-                                Register
-                            </Link>
-
+                            {/* Hiển thị tên người đăng nhập nếu có */}
+                            {username ? (
+                                <div className="d-flex align-items-center ">
+                                    <p className="m-0" style={{fontSize:"18px", fontWeight:"500"}}>{username}</p>
+                                    <button className="btn btn-warning text-white" onClick={handleLogout}>
+                                        Logout
+                                    </button>
+                                </div>
+                            ) : (
+                                <>
+                                    <Link to="/login" className="btn " type="button">
+                                        {' '}
+                                        Login
+                                    </Link>
+                                    <Link to="/register" className="btn btn-warning text-white" type="button">
+                                        Register
+                                    </Link>
+                                </>
+                            )}
                             <Button className="menu-mobile" onClick={handleDrawerOpen}>
-                                <FontAwesomeIcon icon={faBars} />
-                            </Button>
-
+                                <FontAwesomeIcon icon={faBars} />{' '}
+                            </Button>{' '}
                             <Drawer
                                 title="Heading"
                                 placement="right"
@@ -140,5 +92,3 @@ const AppHeader = () => {
 };
 
 export default AppHeader;
-
-

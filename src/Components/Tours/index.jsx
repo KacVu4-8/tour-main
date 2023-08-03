@@ -64,7 +64,7 @@ function Tours() {
                 </div>
             </div>
             <Explore/>
-            <Booking/>
+            {/* <Booking/> */}
             <Letter />
             <Footer/>
         </div>

@@ -7,3 +7,67 @@ http://localhost:4000/api/v1/review
 http://localhost:4000/api/v1/auth
 
 http://localhost:4000/api/v1/booking
+
+const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const onFinish = (values) => {
+        setLoading(true);
+        axios.post('http://localhost:4000/api/v1/auth/register', values)
+            .then((response) => {
+                setLoading(false);
+                if (response.data.success) {
+                    message.success('Đăng ký thành công!');
+                    navigate('/login');
+                } else {
+                    message.error('Đăng ký thất bại. Thử lại sau!');
+                }
+            })
+            .catch((error) => {
+                setLoading(false);
+                message.error('Đăng ký thất bại. Thử lại sau!');
+            });
+    };
+
+    const [formData, setFormData] = useState({
+        username: "",
+        email: "",
+        password: "",
+      });
+    
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const onFinish = (values) => {
+        setLoading(true);
+        axios.post('http://localhost:4000/api/v1/auth/register', values)
+            .then((response) => {
+                setLoading(false);
+                if (response.data.success) {
+                    message.success('Đăng ký thành công!');
+                    navigate('/login');
+                } else {
+                    message.error('Đăng ký thất bại. Thử lại sau!');
+                }
+            })
+            .catch((error) => {
+                setLoading(false);
+                message.error('Đăng ký thất bại. Thử lại sau!');
+            });
+    };
+
+
+
+    
+    
+    
+    
+    64cbbe462f7c08970ffa4145
+    64cbbe252f7c08970ffa413f
+    64cbba492f7c08970ffa413b
+    64cbb7432f7c08970ffa4137
+    64cbb6252f7c08970ffa4135
+    64cbb6142f7c08970ffa4133
+    64cbb36d2f7c08970ffa412d
+    64cb76152a91642426329cb7
+    64cb76012a91642426329cb3
