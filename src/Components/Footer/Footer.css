@@ -6,13 +6,19 @@
 
 .footer-logo {
     justify-content: center;
-    
 }
+
+
 
 .footer_link {
     color: black;
     margin-bottom: 16px;
     font-weight: 700    ;
+}
+
+.footer_link,
+.footer_list {
+    text-align: start;
 }
 
 .footer_list a {

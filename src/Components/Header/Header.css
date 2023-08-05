@@ -3,7 +3,13 @@
     align-items: center;
     justify-content: space-between;
     height: 80px;
+    position: relative;
+}
+
+.header .sticky_header {
     position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .header-logo {
@@ -31,7 +37,7 @@
     color: black;
 }
 
-.menu-list a:active {
+.menu-list a.active {
     color: #faa935;
 }
 .header-login {

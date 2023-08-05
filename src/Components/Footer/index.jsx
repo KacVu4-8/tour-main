@@ -15,26 +15,26 @@ function Footer() {
                     <div className="col-lg-3">
                         <div className="footer-logo">
                             <img href="/" src={logo} alt="" />
-                            <p>Vu we love you so muchhhhhhhhhhhhhhh</p>
+                            <p >Vu we love you so muchhhhhhhhhhhhhhh</p>
                         </div>
                         <div className="footer-logo d-flex align-items-center gap-4">
                             <span>
-                                <a href="" className="">
+                                <a href="/" className="">
                                     <FontAwesomeIcon icon={faYoutube} />
                                 </a>
                             </span>
                             <span>
-                                <a href="" className="">
+                                <a href="/" className="">
                                     <FontAwesomeIcon icon={faGithub} />
                                 </a>
                             </span>
                             <span>
-                                <a href="" className="">
+                                <a href="/" className="">
                                     <FontAwesomeIcon icon={faFacebook} />
                                 </a>
                             </span>
                             <span>
-                                <a href="" className="">
+                                <a href="/" className="">
                                     <FontAwesomeIcon icon={faInstagram} />
                                 </a>
                             </span>

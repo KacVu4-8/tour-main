@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Button, Drawer } from 'antd';
 import logo from './logo-header.png';
-import Navbar from '../../router';
+import classNames from 'classnames';
+
 import './Header.css';
 
 const AppHeader = () => {
+    const location = useLocation();
+
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const handleLogout = () => {
         // Xóa thông tin người dùng khỏi localStorage khi đăng xuất
@@ -33,20 +36,42 @@ const AppHeader = () => {
         <>
             <div className="container">
                 <div className="row">
-                    <div className="header">
+                    <div className="header sticky_header">
                         <div className="header-logo col-lg-5">
                             <img src={logo} alt="" srcset="" />
                         </div>
                         <div className="header-menu col-lg-3">
                             <div className="menu-list">
-                                <Navbar />
+                                <Link
+                                    to="/"
+                                    className={classNames({ active: location.pathname === '/' })}
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    Home
+                                </Link>
+                                <Link
+                                    to="/about"
+                                    className={classNames({ active: location.pathname === '/about' })}
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    About
+                                </Link>
+                                <Link
+                                    to="/tours"
+                                    className={classNames({ active: location.pathname === '/tours' })}
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    Tours
+                                </Link>
                             </div>
                         </div>
                         <div className="header-login col-lg-3">
                             {/* Hiển thị tên người đăng nhập nếu có */}
                             {username ? (
                                 <div className="d-flex align-items-center ">
-                                    <p className="m-0" style={{fontSize:"18px", fontWeight:"500"}}>{username}</p>
+                                    <p className="m-0" style={{ fontSize: '18px', fontWeight: '500' }}>
+                                        {username}
+                                    </p>
                                     <button className="btn btn-warning text-white" onClick={handleLogout}>
                                         Logout
                                     </button>
