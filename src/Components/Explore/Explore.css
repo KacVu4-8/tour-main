@@ -92,3 +92,35 @@
 .card_bottom a:hover {
     color: #0b2727;
 }
+
+/* Responsive */
+
+/* @media (max-width: 768px) {
+    .card_bottom {
+        display: flex;
+    }
+} */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #eb2b2b;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button.active {
+    background-color: #0b2727;
+    color: #ffffff;
+}
+
+.pagination button:hover {
+    background-color: #ccc;
+}

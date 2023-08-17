@@ -55,9 +55,9 @@ const GioiThieu = () => {
                         </div>
                     </div>
                     <div className="col-lg-12">
-                        <div className="search-bar">
-                            <div className="d-flex align-items-center gap-4">
-                                <div className="d-flex gap-3 group__form group__form-first">
+                        <div className="search-bar w-100">
+                            <div className=" search-bar_group">
+                                <div className="d-flex gap-3 group__form group__form-first mb-3">
                                     <span className="align-items-center">
                                         <FontAwesomeIcon icon={faLocationDot} />
                                     </span>
@@ -66,7 +66,7 @@ const GioiThieu = () => {
                                         <input type="text" placeholder="Where are you doing ? " />
                                     </div>
                                 </div>
-                                <div className="d-flex gap-3 group__form group__form-first">
+                                <div className="d-flex gap-3 group__form group__form-first mb-3">
                                     <span className="align-items-center">
                                         <FontAwesomeIcon icon={faMapLocation} />
                                     </span>
@@ -75,7 +75,7 @@ const GioiThieu = () => {
                                         <input type="text" placeholder="Distance k/m " />
                                     </div>
                                 </div>
-                                <div className="d-flex gap-3 group__form group__form-first">
+                                <div className="d-flex gap-3 group__form group__form-first mb-3">
                                     <span className="align-items-center">
                                         <FontAwesomeIcon icon={faUsers} />
                                     </span>

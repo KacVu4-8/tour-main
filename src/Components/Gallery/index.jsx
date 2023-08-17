@@ -18,7 +18,7 @@ function Gallery() {
                         <h2 className="gallery_sub">Visit our customers tour gallery</h2>
                     </div>
                     <div className="col-lg-12">
-                        <div>
+                        <div className="img_group">
                             <div
                                 style={{
                                     display: 'flex',
@@ -31,14 +31,16 @@ function Gallery() {
                                 }}
                             >
                                 <div
+                                    className="img_item"
                                     style={{
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'stretch',
                                         alignItems: 'flex-start',
-                                        flex: '1 1 0%',
-                                        width: '0px',
+                                        // flex: '1 1 0%',
+                                        // width: '0px',
                                         gap: '1rem',
+                                        width: '100%',
                                     }}
                                 >
                                     <img
@@ -57,14 +59,16 @@ function Gallery() {
                                     />
                                 </div>
                                 <div
+                                        
                                     style={{
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'stretch',
                                         alignItems: 'flex-start',
                                         flex: '1 1 0%',
-                                        width: '0px',
+                                        // width: '0px',
                                         gap: '1rem',
+                                        width: '100%',
                                     }}
                                 >
                                     <img

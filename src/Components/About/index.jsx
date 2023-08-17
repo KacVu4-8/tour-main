@@ -1,10 +1,12 @@
-import AppHeader from '../Header'
+// import AppHeader from '../Header'
 import Footer from '../Footer'
+import AddTour from '../AddTours';
 
 function About() {
     return ( 
         <div>
-            <AppHeader />
+            {/* <AppHeader /> */}
+            <AddTour/>
             <Footer/>
         </div>
      );

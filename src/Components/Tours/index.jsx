@@ -1,84 +1,8 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faLocationDot, faMapLocation, faUsers, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-// import { Input, DatePicker, InputNumber, Space } from 'antd';
-
-// import AppHeader from '../Header';
-// import Footer from '../Footer';
-// import Letter from '../Letter';
-// import Explore from '../Explore';
-// import './Tours.css';
-
-// function Tours() {
-//     return (
-//         <div>
-//             <AppHeader />
-//             <section className="tours-img">
-//                 <div className="container">
-//                     <div className="row">
-//                         <div className="col-lg-12">
-//                             <h1>All Tours</h1>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//             <div className="container">
-//                 <div className="row">
-//                     <div className="col-lg-12">
-//                         <div className="search-bar">
-//                             <div className="d-flex align-items-center gap-4">
-//                                 <div className="d-flex gap-3 group__form group__form-first">
-//                                     <span className="align-items-center">
-//                                         <FontAwesomeIcon icon={faLocationDot} />
-//                                     </span>
-//                                     <div>
-//                                         <h6>Location</h6>
-//                                         <Input className="input_distance" placeholder="Where are you doing ? "></Input>
-//                                     </div>
-//                                 </div>
-//                                 <div className="d-flex gap-3 group__form group__form-first">
-//                                     <span className="align-items-center">
-//                                         <FontAwesomeIcon icon={faMapLocation} />
-//                                     </span>
-//                                     <div>
-//                                         <h6>Distance</h6>
-//                                         {/* <input type="text" placeholder="Distance k/m " /> */}
-//                                         <InputNumber className="input_distance" min={0} max={100} placeholder="k/m" />
-//                                     </div>
-//                                 </div>
-//                                 <div className="d-flex gap-3 group__form group__form-first">
-//                                     <span className="align-items-center">
-//                                         <FontAwesomeIcon icon={faUsers} />
-//                                     </span>
-//                                     <div>
-//                                         <h6>Max People</h6>
-//                                         {/* <input type="text" placeholder="0" /> */}
-//                                         <InputNumber className="input_distance" min={0} max={100} placeholder="Guest" />
-//                                     </div>
-//                                     <span className="icon-search">
-//                                         <i>
-//                                             <FontAwesomeIcon icon={faMagnifyingGlass} />
-//                                         </i>
-//                                     </span>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             <Explore />
-//             <Letter />
-//             <Footer />
-//         </div>
-//     );
-// }
-
-// export default Tours;
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faMapLocation, faUsers, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Input, InputNumber } from 'antd';
 import { useState } from 'react';
-import AppHeader from '../Header';
+// import AppHeader from '../Header';
 import Footer from '../Footer';
 import Letter from '../Letter';
 import Explore from '../Explore';
@@ -93,7 +17,7 @@ function Tours() {
 
     return (
         <div>
-            <AppHeader />
+            {/* <AppHeader /> */}
             <section className="tours-img">
                 <div className="container">
                     <div className="row">

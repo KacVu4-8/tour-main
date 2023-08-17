@@ -1,4 +1,4 @@
-import AppHeader from '../Components/Header';
+
 import GioiThieu from '../Components/GioiThieu';
 import Offer from '../Components/Offer';
 import Explore from '../Components/Explore';
@@ -11,7 +11,7 @@ import Footer from '../Components/Footer';
 function Home() {
     return (
         <div>
-            <AppHeader />
+            {/* <AppHeader /> */}
             <GioiThieu />
             <Offer />
             <Explore/>

@@ -6,11 +6,14 @@
     position: relative;
 }
 
-.header .sticky_header {
+.sticky_header {
+    content: '';
     position: sticky;
     top: 0;
     z-index: 999;
 }
+
+
 
 .header-logo {
     display: flex;
@@ -44,6 +47,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    text-align: center;
 }
 
 .header-login a {
@@ -60,6 +64,28 @@
     border-radius: 50px;
     padding: 7px 24px;
 }
+
+.header-login .icon_cart {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    margin-left: 16px;
+    color: #0b2727;
+}
+
+.icon_cart {
+    position: relative;
+}
+
+.icon_cart .cart-notice {
+    content: '';
+    position: absolute;
+    font-size: 17px;
+    top: 3px;
+    right: 5px;
+    color: #faa935;
+}
+
 
 /* Mobile */
 @media only screen and (max-width: 768px) {

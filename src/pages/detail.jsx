@@ -1,12 +1,12 @@
-import AppHeader from '../Components/Header';
+// import AppHeader from '../Components/Header';
 import Footer from '../Components/Footer';
-import Booking from '../Components/Booking';
+// import Booking from '../Components/Booking';
 import { Link } from 'react-router-dom';
 
 function Detail() {
     return (
         <div>
-            <AppHeader />
+            {/* <AppHeader /> */}
             <section>
                 <div className="container">
                     <div className="finish" style={{textAlign:'center'}}>

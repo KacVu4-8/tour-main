@@ -9,14 +9,14 @@ import {
     faUsers,
     faXmark,
 } from '@fortawesome/free-solid-svg-icons';
-import { Input, DatePicker, InputNumber, Space,} from 'antd';
+import { Input, DatePicker, InputNumber, Space } from 'antd';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import AppHeader from '../Header';
+// import AppHeader from '../Header';
 import Footer from '../Footer';
 import user from '../images/user.jpg';
 
-function Booking() {
+const Booking = ({ updateCartCount }) => {
     const { id } = useParams();
     const [tour, setTour] = useState(null);
     const [guestCount, setGuestCount] = useState('');
@@ -114,9 +114,37 @@ function Booking() {
         console.log(date, dateString);
     };
 
+
+    // const handleBookClick = () => {
+    //     if (isUserLoggedIn) {
+    //         updateCartCount();
+
+    //         // Chuyển hướng đến trang Booking với tham số id của tour đã chọn và thông tin tour
+    //         navigate(`/cart/${id}`, { state: { selectedTour: tour } }); // Thêm dữ liệu vào location.state
+    //     } else {
+    //         alert('Bạn cần đăng nhập để thực hiện đặt tour.');
+    //         navigate('/login');
+    //     }
+    // };
+
     const handleBookClick = () => {
         if (isUserLoggedIn) {
-            navigate('/detail');
+            updateCartCount();
+    
+            // Thêm tour đã chọn vào giỏ hàng
+            const cartItem = {
+                id: tour._id,
+                title: tour.title,
+                city: tour.city,
+            };
+    
+            // Bạn có thể lưu giỏ hàng trong local storage hoặc sử dụng thư viện quản lý state như Redux
+            const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+            currentCart.push(cartItem);
+            localStorage.setItem('cart', JSON.stringify(currentCart));
+    
+            // Chuyển hướng đến trang giỏ hàng
+            navigate('/cart');
         } else {
             alert('Bạn cần đăng nhập để thực hiện đặt tour.');
             navigate('/login');
@@ -125,7 +153,7 @@ function Booking() {
 
     return (
         <div>
-            <AppHeader />
+            {/* <AppHeader /> */}
             <section className="mt-5">
                 <div className="container">
                     <div className="row">
@@ -303,6 +331,6 @@ function Booking() {
             <Footer />
         </div>
     );
-}
+};
 
 export default Booking;

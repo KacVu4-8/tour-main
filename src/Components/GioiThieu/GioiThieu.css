@@ -65,6 +65,8 @@ section {
     width: 100%;
 }
 
+
+
 .group__form span {
     color: #ee6e6e;
     font-size: 1.8rem;
@@ -76,6 +78,8 @@ section {
     font-size: 0.9rem;
     font-weight: 500;
 }
+
+
 
 .search-bar {
     border-radius: 50px;
@@ -97,4 +101,26 @@ section {
     color: #fff;
     padding: 0.5rem;
     cursor: pointer;
+}
+
+/* Responsive */
+/* Mobile */
+@media (max-width: 768px) {
+    .search-bar_group {
+        display: inline-block;
+    }
+}
+
+
+/* Ipad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* LapTop */
+@media only screen and (min-width: 1024px) {
+    .search-bar_group {
+        display: flex;
+        align-items: center;
+        gap: 4;
+    }
 }

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Link,useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Button, Drawer } from 'antd';
 import logo from './logo-header.png';
 import classNames from 'classnames';
+import { ShoppingCartOutlined } from '@ant-design/icons';
 
 import './Header.css';
 
-const AppHeader = () => {
+const AppHeader = ({ cartCount }) => {
     const location = useLocation();
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -35,7 +36,7 @@ const AppHeader = () => {
     return (
         <>
             <div className="container">
-                <div className="row">
+                <div className="row ">
                     <div className="header sticky_header">
                         <div className="header-logo col-lg-5">
                             <img src={logo} alt="" srcset="" />
@@ -66,20 +67,22 @@ const AppHeader = () => {
                             </div>
                         </div>
                         <div className="header-login col-lg-3">
-                            {/* Hiển thị tên người đăng nhập nếu có */}
                             {username ? (
-                                <div className="d-flex align-items-center ">
+                                <div className="d-flex align-items-center">
                                     <p className="m-0" style={{ fontSize: '18px', fontWeight: '500' }}>
                                         {username}
                                     </p>
                                     <button className="btn btn-warning text-white" onClick={handleLogout}>
                                         Logout
                                     </button>
+                                    <Link to="/cart" className="icon_cart">
+                                        <ShoppingCartOutlined />
+                                        <span className="cart-notice">({cartCount})</span>
+                                    </Link>
                                 </div>
                             ) : (
                                 <>
                                     <Link to="/login" className="btn " type="button">
-                                        {' '}
                                         Login
                                     </Link>
                                     <Link to="/register" className="btn btn-warning text-white" type="button">
@@ -89,13 +92,8 @@ const AppHeader = () => {
                             )}
                             <Button className="menu-mobile" onClick={handleDrawerOpen}>
                                 <FontAwesomeIcon icon={faBars} />{' '}
-                            </Button>{' '}
-                            <Drawer
-                                title="Heading"
-                                placement="right"
-                                onClose={handleDrawerClose}
-                                visible={isDrawerOpen} // Trạng thái hiển thị của Drawer
-                            >
+                            </Button>
+                            <Drawer placement="right" onClose={handleDrawerClose} visible={isDrawerOpen}>
                                 <div className="offcanvas-body">
                                     <Link style={{ textDecoration: 'none' }} to="/">
                                         Home
